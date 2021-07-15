@@ -10,18 +10,18 @@ function setupDevtool(){
 }
 
 module.exports = {
-  resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
-  },
   mode: NODE_ENV ? NODE_ENV : "development",
-  entry: path.resolve(__dirname, "src/index.jsx"),
+  resolve: {
+    extensions: [".js", ".jsx", ".json"]
+  },
+  entry: path.resolve(__dirname, "../src/client/index.jsx"),
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
+    path: path.resolve(__dirname, "../dist/client"),
+    filename: "client.js",
   },
   module: {
     rules: [{
-      test: /\.[tj]sx?$/,
+      test: /\.[jt]sx?$/,
       use: ['ts-loader']
     }]
   },
